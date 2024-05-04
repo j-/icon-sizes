@@ -1,5 +1,6 @@
 import { useMemo, type FC, type ImgHTMLAttributes } from 'react';
 import { DraggableImage } from './DraggableImage';
+import { IMAGE_TYPE_PNG } from './types';
 import { canvasToDataURL } from './utils/canvas-to-data-url';
 
 export type IconRasterBaseProps = ImgHTMLAttributes<HTMLImageElement> & {
@@ -16,7 +17,7 @@ export const IconRasterBase: FC<IconRasterBaseProps> = ({
   colorBG,
   ...props
 }) => {
-  const type = 'image/png';
+  const type = IMAGE_TYPE_PNG;
 
   const dataURL = useMemo(() => {
     const canvas = document.createElement('canvas');
@@ -37,7 +38,7 @@ export const IconRasterBase: FC<IconRasterBaseProps> = ({
     ctx.fillText(label, 0, size);
 
     return canvasToDataURL(canvas, type);
-  }, [size, colorFG, colorBG]);
+  }, [colorBG, colorFG, size, type]);
 
   return (
     <DraggableImage
