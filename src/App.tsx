@@ -1,35 +1,27 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import type { FC } from 'react';
+import { IconGrid } from './IconGrid';
+import { IconRasterDark } from './IconRasterDark';
+import { IconRasterLight } from './IconRasterLight';
+import { MAX_SIZE, MIN_SIZE, SIZES } from './icon';
 
-function App() {
-  const [count, setCount] = useState(0)
+export const App: FC = () => (
+  <>
+    <h1>Icon sizes</h1>
 
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <h2>Raster icons</h2>
 
-export default App
+    <IconGrid>
+      {SIZES.map((size) => (
+        <IconRasterLight key={size} size={size} min={MIN_SIZE} max={MAX_SIZE} />
+      ))}
+    </IconGrid>
+
+    <h2>Raster icons (inverted)</h2>
+
+    <IconGrid>
+      {SIZES.map((size) => (
+        <IconRasterDark key={size} size={size} min={MIN_SIZE} max={MAX_SIZE} />
+      ))}
+    </IconGrid>
+  </>
+);
