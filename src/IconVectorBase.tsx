@@ -13,6 +13,10 @@ export type IconVectorBaseProps = ImgHTMLAttributes<HTMLImageElement> & {
 const SVG_NS = 'http://www.w3.org/2000/svg';
 const DEFAULT_FONT_SIZE = 9;
 
+const roundTo = (val: number, dp = 0) => (
+  Math.round(val * 10 ** dp) / 10 ** dp
+);
+
 export const IconVectorBase: FC<IconVectorBaseProps> = ({
   size,
   filename,
@@ -24,9 +28,9 @@ export const IconVectorBase: FC<IconVectorBaseProps> = ({
 
   const dataURL = useMemo(() => {
     const svg = document.createElementNS(SVG_NS, 'svg');
-
     svg.setAttribute('width', `${size}`);
     svg.setAttribute('height', `${size}`);
+    svg.setAttribute('viewBox', `0 0 ${size} ${size}`);
 
     const bg = document.createElementNS(SVG_NS, 'rect');
     bg.setAttribute('fill', colorBG);
@@ -37,7 +41,7 @@ export const IconVectorBase: FC<IconVectorBaseProps> = ({
 
     const digits = Math.ceil(Math.log10(size));
     const width = DEFAULT_FONT_SIZE * digits;
-    const scale = size / width;
+    const scale = roundTo(size / width, digits);
 
     const fg = document.createElementNS(SVG_NS, 'text');
     fg.setAttribute('fill', colorFG);
