@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 1024 1024">
+  <defs>
+    <style>
+      text {
+        font-family: sans-serif;
+      }
+      @media (prefers-color-scheme: light) {
+        svg { background-color: #fff; }
+        #bg-none { visibility: hidden !important; }
+        #bg-light { visibility: visible !important; }
+        text { fill: #000; }
+      }
+      @media (prefers-color-scheme: dark) {
+        svg { background-color: #000; }
+        #bg-none { visibility: hidden !important; }
+        #bg-dark { visibility: visible !important; }
+        text { fill: #fff; }
+      }
+      @media (max-width: 23px) {
+        #text-16 { visibility: visible !important; }
+      }
+      @media (min-width: 24px) and (max-width: 31px) {
+        #text-24 { visibility: visible !important; }
+      }
+      @media (min-width: 32px) and (max-width: 47px) {
+        #text-32 { visibility: visible !important; }
+      }
+      @media (min-width: 48px) and (max-width: 63px) {
+        #text-48 { visibility: visible !important; }
+      }
+      @media (min-width: 64px) and (max-width: 127px) {
+        #text-64 { visibility: visible !important; }
+      }
+      @media (min-width: 128px) and (max-width: 255px) {
+        #text-128 { visibility: visible !important; }
+      }
+      @media (min-width: 256px) and (max-width: 511px) {
+        #text-256 { visibility: visible !important; }
+      }
+      @media (min-width: 512px) and (max-width: 1023px) {
+        #text-512 { visibility: visible !important; }
+      }
+      @media (min-width: 1024px) {
+        #text-1024 { visibility: visible !important; }
+      }
+    </style>
+  </defs>
+
+  <g id="bg-light" style="visibility: hidden">
+    <rect fill="hsl(0, 90%, 90%)" width="1024" height="1024" />
+    <rect fill="hsl(45, 90%, 90%)" x="64" y="64" width="896" height="896" />
+    <rect fill="hsl(90, 90%, 90%)" x="128" y="128" width="768" height="768" />
+    <rect fill="hsl(135, 90%, 90%)" x="192" y="192" width="640" height="640" />
+    <rect fill="hsl(180, 90%, 90%)" x="256" y="256" width="512" height="512" />
+    <rect fill="hsl(225, 90%, 90%)" x="320" y="320" width="384" height="384" />
+    <rect fill="hsl(270, 90%, 90%)" x="384" y="384" width="256" height="256" />
+    <rect fill="hsl(315, 90%, 90%)" x="448" y="448" width="128" height="128" />
+  </g>
+
+  <g id="bg-dark" style="visibility: hidden">
+    <rect fill="hsl(0, 10%, 10%)" width="1024" height="1024" />
+    <rect fill="hsl(45, 10%, 10%)" x="64" y="64" width="896" height="896" />
+    <rect fill="hsl(90, 10%, 10%)" x="128" y="128" width="768" height="768" />
+    <rect fill="hsl(135, 10%, 10%)" x="192" y="192" width="640" height="640" />
+    <rect fill="hsl(180, 10%, 10%)" x="256" y="256" width="512" height="512" />
+    <rect fill="hsl(225, 10%, 10%)" x="320" y="320" width="384" height="384" />
+    <rect fill="hsl(270, 10%, 10%)" x="384" y="384" width="256" height="256" />
+    <rect fill="hsl(315, 10%, 10%)" x="448" y="448" width="128" height="128" />
+  </g>
+
+  <rect id="bg-none" fill="gray" width="1024" height="1024" />
+
+  <text id="text-16" transform="translate(0, 1024) scale(56.96)" style="visibility: hidden">16</text>
+  <text id="text-24" transform="translate(0, 1024) scale(56.96)" style="visibility: hidden">24</text>
+  <text id="text-32" transform="translate(0, 1024) scale(56.96)" style="visibility: hidden">32</text>
+  <text id="text-48" transform="translate(0, 1024) scale(56.96)" style="visibility: hidden">48</text>
+  <text id="text-64" transform="translate(0, 1024) scale(56.96)" style="visibility: hidden">64</text>
+  <text id="text-128" transform="translate(0, 1024) scale(37.926)" style="visibility: hidden">128</text>
+  <text id="text-256" transform="translate(0, 1024) scale(37.926)" style="visibility: hidden">256</text>
+  <text id="text-512" transform="translate(0, 1024) scale(37.926)" style="visibility: hidden">512</text>
+  <text id="text-1024" transform="translate(0, 1024) scale(28.4444)" style="visibility: hidden">1024</text>
+</svg>

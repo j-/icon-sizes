@@ -108,6 +108,11 @@ export default defineConfig({
             sizes: '1024x1024',
             type: 'image/svg+xml',
           },
+          {
+            src: 'all.svg',
+            sizes: 'all',
+            type: 'image/svg+xml',
+          },
         ],
       },
     }),
